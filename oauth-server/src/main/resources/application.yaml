@@ -1,0 +1,28 @@
+server:
+  port: ${OAUTH_SERVER_PORT}
+
+spring:
+  application:
+    name: oauth-server
+
+  datasource:
+    url: ${DATABASE_URL}
+    username: ${DATABASE_USERNAME}
+    password: ${DATABASE_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+
+
+logging:
+  level:
+    org:
+      springframework:
+        security : info
+        oauth2 : info
+
+auth:
+  issuer: ${OAUTH_ISSUER}
+  client:
+    confidential:
+      client-id: ${OAUTH_CLIENT_ID}
+      secret: ${OAUTH_CLIENT_SECRET}
+      url: ${OAUTH_CLIENT_URL}

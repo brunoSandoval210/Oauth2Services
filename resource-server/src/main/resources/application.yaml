@@ -1,0 +1,15 @@
+server:
+  port: ${SERVER_PORT}
+spring:
+  application:
+    name: resource-server
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: ${OAUTH_ISSUER}
+logging:
+  level:
+    org:
+      springframework:
+        security : trace
