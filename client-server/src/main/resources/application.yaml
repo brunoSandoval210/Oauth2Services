@@ -1,0 +1,18 @@
+server:
+  port: ${CLIENT_SERVER_PORT}
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          confidential-client:
+            provider: oauth-server
+            client-id: ${CLIENT_ID}
+            client-secret: ${CLIENT_SECRET}
+            authorization-grant-type: authorization_code
+            redirect-uri: ${CLIENT_REDIRECT_URI}
+            client-name: confidential-client
+            scope: ${CLIENT_SCOPE}
+        provider:
+          oauth-server:
+            issuer-uri: ${OAUTH_SERVER_ISSUER_URI}
